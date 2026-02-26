@@ -1,6 +1,7 @@
 "use client";
 
 import ThemeToggle from "./components/ThemeToggle";
+import Link from "next/link";
 
 export default function HomePage() {
   const user = {
@@ -33,7 +34,7 @@ export default function HomePage() {
           onClick={handleLogout}
           className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition"
         >
-          Logout
+          <Link href="/home">Home</Link>
         </button>
       </div>
     </div>
