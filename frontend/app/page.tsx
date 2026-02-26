@@ -1,48 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import ThemeToggle from "./components/ThemeToggle";
 
-interface UserData {
-  name: string;
-  email: string;
-}
-
 export default function HomePage() {
-  const router = useRouter();
-  const [user, setUser] = useState<UserData | null>(null);
-
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      router.push("/login");
-      return;
-    }
-
-    const fetchUser = async () => {
-      try {
-        const res = await fetch("/api/auth/me", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setUser(data.user);
-        } else {
-          router.push("/login");
-        }
-      } catch (err) {
-        router.push("/login");
-      }
-    };
-
-    fetchUser();
-  }, [router]);
+  const user = {
+    name: "Demo User",
+    email: "demo@example.com",
+  };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    router.push("/login");
+   
+    alert("Logged out!");
   };
 
   return (
@@ -54,20 +22,12 @@ export default function HomePage() {
           🌿 Welcome to Plantventory
         </h1>
 
-        {user ? (
-          <>
-            <p className="text-gray-700 dark:text-gray-300 mb-2">
-              Hello, <span className="font-semibold">{user.name}</span>
-            </p>
-            <p className="text-gray-500 dark:text-gray-400 mb-6">
-              Email: {user.email}
-            </p>
-          </>
-        ) : (
-          <p className="text-gray-500 dark:text-gray-400 mb-6">
-            Loading your profile...
-          </p>
-        )}
+        <p className="text-gray-700 dark:text-gray-300 mb-2">
+          Hello, <span className="font-semibold">{user.name}</span>
+        </p>
+        <p className="text-gray-500 dark:text-gray-400 mb-6">
+          Email: {user.email}
+        </p>
 
         <button
           onClick={handleLogout}
