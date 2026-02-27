@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-white text-black dark:text-black shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+       
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="https://i.ibb.co/xyz123/plantvenor.png"
@@ -30,7 +30,7 @@ export default function Navbar() {
           <span className="text-2xl font-bold">Plantventory</span>
         </Link>
 
-        {/* Desktop Menu */}
+        
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/" className="hover:text-gray-500">
             Home
@@ -47,7 +47,7 @@ export default function Navbar() {
 
           <ThemeToggle />
 
-          {/* ✅ Logout Button */}
+         
           <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition"
@@ -56,7 +56,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Toggle */}
+       
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -88,7 +88,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+   
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 bg-white dark:bg-gray-900">
           <Link href="/" className="hover:text-gray-500">
@@ -106,7 +106,7 @@ export default function Navbar() {
 
           <ThemeToggle />
 
-          {/* ✅ Mobile Logout */}
+      
           <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition w-full"
