@@ -10,7 +10,7 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* --- Hero Section --- */}
+      
         <section className="relative overflow-hidden py-20 lg:py-32 px-6">
           <div className="max-w-6xl mx-auto text-center">
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wide text-emerald-700 uppercase bg-emerald-50 rounded-full">
