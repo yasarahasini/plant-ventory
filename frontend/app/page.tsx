@@ -1,32 +1,55 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
-export default function Navbar() {
-  const router = useRouter();
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    router.push("/login");
-  };
-
+export default function HomePage() {
   return (
-    <nav className="bg-white text-black px-6 py-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold">🌿 Plantventory</h1>
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+      <Navbar />
 
-      <div className="flex items-center gap-4">
-        <Link href="/" className="hover:underline">
-          Home
-        </Link>
+      {/* Hero Section */}
+      <section className="text-center py-16 px-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-green-700 mb-4">
+          🌿 Welcome to Plantventory
+        </h1>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Manage your plant collection, track growth, and learn plant care
+          tips — all in one beautiful place.
+        </p>
+      </section>
 
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-600 px-4 py-1 rounded-lg text-sm font-medium transition"
-        >
-          Logout
-        </button>
-      </div>
-    </nav>
+      {/* Features Section */}
+      <main className="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-3 gap-8">
+        <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
+          <h3 className="text-xl font-bold mb-3 text-green-600">
+            🌱 My Plants
+          </h3>
+          <p className="text-gray-600">
+            Add, edit and manage your plant inventory easily.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
+          <h3 className="text-xl font-bold mb-3 text-green-600">
+            💧 Care Tracker
+          </h3>
+          <p className="text-gray-600">
+            Track watering schedules and plant health.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
+          <h3 className="text-xl font-bold mb-3 text-green-600">
+            📊 Growth Stats
+          </h3>
+          <p className="text-gray-600">
+            Monitor growth progress and plant insights.
+          </p>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }

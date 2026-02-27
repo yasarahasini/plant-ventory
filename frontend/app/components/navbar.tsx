@@ -4,35 +4,59 @@ import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    router.push("/login");
+  };
 
   return (
-    <nav className="w-full bg-white  text-black dark:text-black shadow-md">
+    <nav className="w-full bg-white text-black dark:text-black shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-       
+        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-         <Image
-  src="https://i.ibb.co/xyz123/plantvenor.png" 
-  alt="Plantventory Logo"
-  width={40}
-  height={40}
-  className="rounded-full"
-/>
+          <Image
+            src="https://i.ibb.co/xyz123/plantvenor.png"
+            alt="Plantventory Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
           <span className="text-2xl font-bold">Plantventory</span>
         </Link>
 
-    
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="hover:text-gray-500 dark:hover:text-gray-300">Home</Link>
-          <Link href="/shop" className="hover:text-gray-500 dark:hover:text-gray-300">Shop</Link>
-          <Link href="/about" className="hover:text-gray-500 dark:hover:text-gray-300">About</Link>
-          <Link href="/contact" className="hover:text-gray-500 dark:hover:text-gray-300">Contact</Link>
+          <Link href="/" className="hover:text-gray-500">
+            Home
+          </Link>
+          <Link href="/shop" className="hover:text-gray-500">
+            Shop
+          </Link>
+          <Link href="/about" className="hover:text-gray-500">
+            About
+          </Link>
+          <Link href="/contact" className="hover:text-gray-500">
+            Contact
+          </Link>
+
           <ThemeToggle />
+
+          {/* ✅ Logout Button */}
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition"
+          >
+            Logout
+          </button>
         </div>
 
-     
+        {/* Mobile Toggle */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -43,7 +67,6 @@ export default function Navbar() {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               {isOpen ? (
                 <path
@@ -65,14 +88,31 @@ export default function Navbar() {
         </div>
       </div>
 
-   
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 bg-white dark:bg-gray-900">
-          <Link href="/" className="hover:text-gray-500 dark:hover:text-gray-300">Home</Link>
-          <Link href="/shop" className="hover:text-gray-500 dark:hover:text-gray-300">Shop</Link>
-          <Link href="/about" className="hover:text-gray-500 dark:hover:text-gray-300">About</Link>
-          <Link href="/contact" className="hover:text-gray-500 dark:hover:text-gray-300">Contact</Link>
+          <Link href="/" className="hover:text-gray-500">
+            Home
+          </Link>
+          <Link href="/shop" className="hover:text-gray-500">
+            Shop
+          </Link>
+          <Link href="/about" className="hover:text-gray-500">
+            About
+          </Link>
+          <Link href="/contact" className="hover:text-gray-500">
+            Contact
+          </Link>
+
           <ThemeToggle />
+
+          {/* ✅ Mobile Logout */}
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition w-full"
+          >
+            Logout
+          </button>
         </div>
       )}
     </nav>
