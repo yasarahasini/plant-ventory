@@ -27,6 +27,7 @@ body {
   padding: 0;
 }
 
+/* Zoom animation for homepage background */
 @keyframes zoom {
   0% { transform: scale(1); }
   50% { transform: scale(1.15); }
@@ -38,5 +39,5 @@ body {
   background-size: cover;
   background-position: center;
   animation: zoom 20s ease-in-out infinite;
-  filter: brightness(0.8);
+  filter: brightness(0.8); /* darkens image for readability in light theme */
 }
