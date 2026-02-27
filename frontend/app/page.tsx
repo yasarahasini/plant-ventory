@@ -1,31 +1,29 @@
 "use client";
 
-import Navbar from "./components/navbar";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function HomePage() {
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
+
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <Navbar />
-      <Header />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100 dark:from-zinc-900 dark:to-black px-4">
+      <ThemeToggle />
 
-      <main className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
-        <div className="bg-white shadow-md rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold mb-2">Indoor Plants</h3>
-          <p>Brighten your home with low-maintenance indoor plants.</p>
-        </div>
-        <div className="bg-white shadow-md rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold mb-2">Outdoor Plants</h3>
-          <p>Create a lush garden with our variety of outdoor plants.</p>
-        </div>
-        <div className="bg-white shadow-md rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold mb-2">Plant Care Tips</h3>
-          <p>Learn how to keep your plants healthy and thriving.</p>
-        </div>
-      </main>
+      <div className="bg-white dark:bg-zinc-800 shadow-xl rounded-2xl p-8 text-center">
+        <h1 className="text-3xl font-bold text-green-600 mb-4">
+          🌿 Welcome to Plantventory
+        </h1>
 
-      <Footer />
+        <button
+          onClick={handleLogout}
+          className="px-6 py-2 bg-red-600 text-white rounded-lg"
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 }
