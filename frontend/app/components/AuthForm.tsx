@@ -10,6 +10,7 @@ type Props = {
 
 export default function AuthForm({ type }: Props) {
   const router = useRouter();
+  const isLogin = type === "login";
 
   const [form, setForm] = useState({
     name: "",
@@ -20,21 +21,20 @@ export default function AuthForm({ type }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const isLogin = type === "login";
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
     try {
-      const res = await fetch(`/api/auth/${type}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `http://localhost:3001/auth/${type}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       const data = await res.json();
 
@@ -49,7 +49,7 @@ export default function AuthForm({ type }: Props) {
       } else {
         router.push("/login");
       }
-    } catch (err) {
+    } catch {
       setError("Network error");
     } finally {
       setLoading(false);
