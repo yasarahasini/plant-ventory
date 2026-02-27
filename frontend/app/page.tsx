@@ -7,8 +7,8 @@ export default function Navbar() {
   const router = useRouter();
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // remove JWT
-    router.push("/login"); // redirect to login
+    localStorage.removeItem("token");
+    router.push("/login");
   };
 
   return (
