@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-green-600 text-white shadow-md">
+    <nav className="w-full bg-white text-black shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold">
           Plantventory
