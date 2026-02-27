@@ -8,7 +8,6 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="text-center py-16 px-6">
         <h1 className="text-4xl md:text-5xl font-bold text-green-700 mb-4">
           🌿 Welcome to Plantventory
@@ -19,7 +18,6 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Features Section */}
       <main className="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-3 gap-8">
         <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-xl transition">
           <h3 className="text-xl font-bold mb-3 text-green-600">
