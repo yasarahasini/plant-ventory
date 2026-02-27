@@ -1,29 +1,32 @@
 "use client";
 
-import ThemeToggle from "./components/ThemeToggle";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export default function HomePage() {
+export default function Navbar() {
+  const router = useRouter();
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/login";
+    localStorage.removeItem("token"); // remove JWT
+    router.push("/login"); // redirect to login
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100 dark:from-zinc-900 dark:to-black px-4">
-      <ThemeToggle />
+    <nav className="bg-white text-black px-6 py-4 flex justify-between items-center">
+      <h1 className="text-xl font-bold">🌿 Plantventory</h1>
 
-      <div className="bg-white dark:bg-zinc-800 shadow-xl rounded-2xl p-8 text-center">
-        <h1 className="text-3xl font-bold text-green-600 mb-4">
-          🌿 Welcome to Plantventory
-        </h1>
+      <div className="flex items-center gap-4">
+        <Link href="/" className="hover:underline">
+          Home
+        </Link>
 
         <button
           onClick={handleLogout}
-          className="px-6 py-2 bg-red-600 text-white rounded-lg"
+          className="bg-red-500 hover:bg-red-600 px-4 py-1 rounded-lg text-sm font-medium transition"
         >
           Logout
         </button>
       </div>
-    </div>
+    </nav>
   );
 }
