@@ -8,15 +8,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function AboutSection() {
-
-  const images = [
-    "/home5.jpg",
-    "/home.jpg",
-    "/home1.jpg",
-  ];
+  const images = ["/home5.jpg", "/home.jpg", "/home1.jpg"];
 
   const [currentImage, setCurrentImage] = useState(0);
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +19,7 @@ export default function AboutSection() {
 
     return () => clearInterval(interval);
   }, []);
-  
+
   return (
     <div className="flex flex-col min-h-screen bg-[#fcfdfa] text-slate-900">
       <Navbar />
@@ -118,17 +112,20 @@ export default function AboutSection() {
         </section>
 
         <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-           <div className="md:w-1/2">
-        <img
-          src={images[currentImage]}
-          alt="Plantventory App"
-          className="w-full rounded-3xl shadow-lg object-cover transition-all duration-700 ease-in-out"
-        />
-      </div>
+          <div className="md:w-1/2">
+            <img
+              src={images[currentImage]}
+              alt="Plantventory App"
+              className="w-full rounded-3xl shadow-lg object-cover transition-all duration-700 ease-in-out"
+            />
+          </div>
 
           <div className="md:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
-              About <span className="text-emerald-600">Plantventory</span>
+              About{" "}
+              <span className="bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 text-transparent bg-clip-text">
+                Plantventory
+              </span>
               <div className="bg-gradient-to-tr from-green-900 via-white to-green-500 w-100 h-1"></div>
             </h2>
             <p className="text-lg text-slate-700 mb-4 leading-relaxed">
