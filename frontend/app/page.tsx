@@ -24,7 +24,7 @@ export default function HomePage() {
           />
 
        
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/20" />
 
 
           <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
