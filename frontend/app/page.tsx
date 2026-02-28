@@ -149,9 +149,7 @@ export default function AboutSection() {
         </section>
 
 
-        <section>
-          
-        </section>
+       
       </main>
 
       <Footer />
