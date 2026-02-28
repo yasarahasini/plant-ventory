@@ -33,7 +33,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- Features Grid --- */}
+       
         <section className="max-w-6xl mx-auto px-6 pb-24">
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard 
@@ -60,7 +60,6 @@ export default function HomePage() {
   );
 }
 
-// Reusable Sub-component for a cleaner Main component
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
     <div className="group bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
