@@ -59,7 +59,7 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-emerald-900/30 flex items-center justify-center gap-2">
-                <Link href="/get-started" className="flex items-center gap-2">
+                <Link href="/get-start" className="flex items-center gap-2">
                   Get Started Free <ArrowRight size={18} />
                 </Link>
               </button>
