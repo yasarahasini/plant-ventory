@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Leaf } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,38 +16,37 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-white text-black dark:text-black shadow-md">
+    <nav className="w-full bg-white text-black dark:text-white shadow-md fixed top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-       
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="https://i.ibb.co/xyz123/plantvenor.png"
-            alt="Plantventory Logo"
-            width={40}
-            height={40}
-            className="rounded-full"
+
+     
+        <Link href="/" className="flex items-center space-x-2 group">
+          <Leaf
+            size={34}
+            className="text-emerald-600 group-hover:rotate-12 transition-transform duration-300"
           />
-          <span className="text-2xl font-bold">Plantventory</span>
+          <span className="text-2xl font-bold tracking-tight">
+            Plant<span className="text-emerald-600">ventory</span>
+          </span>
         </Link>
 
-        
-        <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="hover:text-gray-500">
+     
+        <div className="hidden md:flex items-center text-black space-x-6">
+          <Link href="/" className="hover:text-gray-500 transition">
             Home
           </Link>
-          <Link href="/shop" className="hover:text-gray-500">
+          <Link href="/shop" className="hover:text-gray-500 transition">
             Shop
           </Link>
-          <Link href="/about" className="hover:text-gray-500">
+          <Link href="/about" className="hover:text-gray-500 transition">
             About
           </Link>
-          <Link href="/contact" className="hover:text-gray-500">
+          <Link href="/contact" className="hover:text-gray-500 transition">
             Contact
           </Link>
 
           <ThemeToggle />
 
-         
           <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition"
@@ -56,7 +55,7 @@ export default function Navbar() {
           </button>
         </div>
 
-       
+      
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -88,25 +87,23 @@ export default function Navbar() {
         </div>
       </div>
 
-   
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 bg-white dark:bg-gray-900">
-          <Link href="/" className="hover:text-gray-500">
+          <Link href="/" className="hover:text-black transition">
             Home
           </Link>
-          <Link href="/shop" className="hover:text-gray-500">
+          <Link href="/shop" className="hover:text-gray-500 transition">
             Shop
           </Link>
-          <Link href="/about" className="hover:text-gray-500">
+          <Link href="/about" className="hover:text-gray-500 transition">
             About
           </Link>
-          <Link href="/contact" className="hover:text-gray-500">
+          <Link href="/contact" className="hover:text-gray-500 transition">
             Contact
           </Link>
 
           <ThemeToggle />
 
-      
           <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition w-full"
