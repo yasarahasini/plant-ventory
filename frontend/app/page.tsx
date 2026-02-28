@@ -4,17 +4,14 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { ArrowRight, Leaf, Droplets, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcfdfa] text-slate-900">
       <Navbar />
 
       <main className="flex-grow">
-       
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
-          
-       
           <div
             className="absolute inset-0 bg-cover bg-center animate-zoom-slow"
             style={{
@@ -23,13 +20,9 @@ export default function HomePage() {
             }}
           />
 
-       
           <div className="absolute inset-0 bg-black/20" />
 
-
           <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
-            
-      
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -39,7 +32,6 @@ export default function HomePage() {
               Digital Gardening Made Simple
             </motion.span>
 
-        
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,7 +42,6 @@ export default function HomePage() {
               <span className="text-emerald-400">Plantventory</span>
             </motion.h1>
 
-        
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,7 +52,6 @@ export default function HomePage() {
               track, and nurture your plants with precision and ease.
             </motion.p>
 
-       
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -69,16 +59,20 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-emerald-900/30 flex items-center justify-center gap-2">
-                Get Started Free <ArrowRight size={18} />
+                <Link href="/get-started" className="flex items-center gap-2">
+                  Get Started Free <ArrowRight size={18} />
+                </Link>
               </button>
 
               <button className="px-8 py-4 bg-white/20 backdrop-blur border border-white/30 hover:bg-white/30 text-white font-semibold rounded-xl transition-all">
-                Explore Features
+                <Link href="/explore" className="flex items-center gap-2">
+                  {" "}
+                  Explore Features
+                </Link>
               </button>
             </motion.div>
           </div>
         </section>
-
 
         <section className="max-w-6xl mx-auto px-6 py-24">
           <div className="grid md:grid-cols-3 gap-8">
@@ -103,43 +97,44 @@ export default function HomePage() {
           </div>
         </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-  
+        <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <img
+              src="/home2.jpg"
+              alt="Plantventory App"
+              className="w-full rounded-full shadow-lg object-cover"
+            />
+          </div>
 
-  <div className="md:w-1/2">
-    <img
-      src="/home2.jpg"
-      alt="Plantventory App"
-      className="w-full rounded-full shadow-lg object-cover"
-    />
-  </div>
-
-  
-  <div className="md:w-1/2 flex flex-col justify-center">
-    <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
-      About <span className="text-emerald-600">Plantventory</span>
-    </h2>
-    <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-      Plantventory is your digital gardening assistant. Organize your plants, track their growth, 
-      and receive care reminders to help every plant thrive. Perfect for beginners and plant enthusiasts alike.
-    </p>
-    <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-      With Plantventory, you can create a personalized plant catalog, log watering schedules, and 
-      analyze plant growth over time. Turn your home into a lush, healthy garden effortlessly.
-    </p>
-    <button className="w-max px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg">
-      Learn More
-    </button>
-  </div>
-
-</section>
+          <div className="md:w-1/2 flex flex-col justify-center">
+            <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
+              About <span className="text-emerald-600">Plantventory</span>
+            </h2>
+            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+              Plantventory is your digital gardening assistant. Organize your
+              plants, track their growth, and receive care reminders to help
+              every plant thrive. Perfect for beginners and plant enthusiasts
+              alike.
+            </p>
+            <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+              With Plantventory, you can create a personalized plant catalog,
+              log watering schedules, and analyze plant growth over time. Turn
+              your home into a lush, healthy garden effortlessly.
+            </p>
+            <button className="w-max px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg">
+              <Link href="/learn" className="flex items-center gap-2">
+                {" "}
+                Learn More
+              </Link>
+            </button>
+          </div>
+        </section>
       </main>
 
       <Footer />
     </div>
   );
 }
-
 
 function FeatureCard({
   icon,
