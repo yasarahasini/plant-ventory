@@ -34,7 +34,7 @@ export default function Home() {
     <div className="min-h-screen bg-green-50">
 
  
-      <section className="sticky top-0 z-10 bg-white border-b border-green-100 px-6 py-20 shadow-xl">
+      <section className="sticky top-0 z-10 bg-white border-b border-green-900 px-6 py-20 shadow-xl">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-between items-end mb-10">
             <div>
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
     
-      <section className="sticky top-0 z-30 bg-green-800 text-white px-6 py-20">
+      <section className="sticky top-0 z-30 bg-blue-900 text-white px-6 py-20">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold mb-10 text-center">
             Inventory Overview
