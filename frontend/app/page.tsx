@@ -147,6 +147,11 @@ export default function AboutSection() {
             </button>
           </div>
         </section>
+
+
+        <section>
+          
+        </section>
       </main>
 
       <Footer />
