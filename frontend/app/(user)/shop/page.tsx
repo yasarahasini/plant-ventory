@@ -46,8 +46,7 @@ const plants: Plant[] = [
 const Page: React.FC = () => {
   return (
     <div className="min-h-screen bg-green-50 px-6 py-12">
-      
-      {/* Title */}
+     
       <h1 className="text-4xl font-bold text-center text-green-700 mb-4">
         Plant-ventory Shop 🌿
       </h1>
@@ -55,7 +54,6 @@ const Page: React.FC = () => {
         Discover beautiful plants for your home and garden
       </p>
 
-      {/* Product Grid */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {plants.map((plant) => (
           <div
