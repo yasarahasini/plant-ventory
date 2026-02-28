@@ -11,10 +11,10 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* ================= HERO SECTION ================= */}
+       
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
           
-          {/* 🌿 Background Image with Zoom */}
+       
           <div
             className="absolute inset-0 bg-cover bg-center animate-zoom-slow"
             style={{
@@ -23,13 +23,13 @@ export default function HomePage() {
             }}
           />
 
-          {/* Overlay */}
+       
           <div className="absolute inset-0 bg-black/50" />
 
-          {/* Content */}
+
           <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
             
-            {/* Badge */}
+      
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function HomePage() {
               Digital Gardening Made Simple
             </motion.span>
 
-            {/* Heading */}
+        
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function HomePage() {
               <span className="text-emerald-400">Plantventory</span>
             </motion.h1>
 
-            {/* Description */}
+        
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function HomePage() {
               track, and nurture your plants with precision and ease.
             </motion.p>
 
-            {/* Buttons */}
+       
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -79,7 +79,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ================= FEATURES ================= */}
+
         <section className="max-w-6xl mx-auto px-6 py-24">
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
@@ -109,7 +109,6 @@ export default function HomePage() {
   );
 }
 
-/* ================= FEATURE CARD ================= */
 
 function FeatureCard({
   icon,
