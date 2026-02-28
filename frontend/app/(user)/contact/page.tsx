@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 const Page: React.FC = () => {
@@ -13,7 +14,7 @@ const Page: React.FC = () => {
         </p>
 
        
-        <form className="space-y-5">
+        <form className="space-y-5 text-green-900">
           
     
           <div>
