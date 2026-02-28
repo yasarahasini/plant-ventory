@@ -26,7 +26,7 @@ export default function Navbar() {
             className="text-emerald-600 group-hover:rotate-12 transition-transform duration-300"
           />
           <span className="text-2xl font-bold tracking-tight">
-           <span className="text-emerald-900">Plant</span> <span className="text-emerald-600">ventory</span>
+           <span className="text-emerald-900">Plant</span> <span className="bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 text-transparent bg-clip-text">ventory</span>
           </span>
         </Link>
 
