@@ -5,7 +5,27 @@ import Footer from "./components/footer";
 import { ArrowRight, Leaf, Droplets, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-export default function HomePage() {
+import { useEffect, useState } from "react";
+
+export default function AboutSection() {
+
+  const images = [
+    "/home5.jpg",
+    "/home.jpg",
+    "/home1.jpg",
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+  
   return (
     <div className="flex flex-col min-h-screen bg-[#fcfdfa] text-slate-900">
       <Navbar />
@@ -98,17 +118,18 @@ export default function HomePage() {
         </section>
 
         <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
-            <img
-              src="/home2.jpg"
-              alt="Plantventory App"
-              className="w-full rounded-full shadow-lg object-cover"
-            />
-          </div>
+           <div className="md:w-1/2">
+        <img
+          src={images[currentImage]}
+          alt="Plantventory App"
+          className="w-full rounded-3xl shadow-lg object-cover transition-all duration-700 ease-in-out"
+        />
+      </div>
 
           <div className="md:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
               About <span className="text-emerald-600">Plantventory</span>
+              <div className="bg-gradient-to-tr from-green-900 via-white to-green-500 w-100 h-1"></div>
             </h2>
             <p className="text-lg text-slate-700 mb-4 leading-relaxed">
               Plantventory is your digital gardening assistant. Organize your
