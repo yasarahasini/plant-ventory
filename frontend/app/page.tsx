@@ -102,6 +102,37 @@ export default function HomePage() {
             />
           </div>
         </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
+  
+
+  <div className="md:w-1/2">
+    <img
+      src="/home2.jpg"
+      alt="Plantventory App"
+      className="w-full rounded-full shadow-lg object-cover"
+    />
+  </div>
+
+  
+  <div className="md:w-1/2 flex flex-col justify-center">
+    <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
+      About <span className="text-emerald-600">Plantventory</span>
+    </h2>
+    <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+      Plantventory is your digital gardening assistant. Organize your plants, track their growth, 
+      and receive care reminders to help every plant thrive. Perfect for beginners and plant enthusiasts alike.
+    </p>
+    <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+      With Plantventory, you can create a personalized plant catalog, log watering schedules, and 
+      analyze plant growth over time. Turn your home into a lush, healthy garden effortlessly.
+    </p>
+    <button className="w-max px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg">
+      Learn More
+    </button>
+  </div>
+
+</section>
       </main>
 
       <Footer />
