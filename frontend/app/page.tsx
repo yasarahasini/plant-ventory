@@ -88,10 +88,10 @@ export default function AboutSection() {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-6 py-24">
-          <div className="grid md:grid-cols-3 gap-8">
+        <section className="max-w-6xl mx-auto px-6 py-24 shadow hover:shadow-lg transition-all shadow-green-200">
+          <div className="grid md:grid-cols-3 gap-8 ">
             <FeatureCard
-              icon={<Leaf className="text-emerald-600" size={28} />}
+              icon={<Leaf className="text-emerald-600 " size={28} />}
               title="Smart Inventory"
               description="A centralized digital catalog for every species in your home, complete with custom notes and photos."
               delay={0}
