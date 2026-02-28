@@ -90,7 +90,7 @@ export default function LearnPage() {
   
 
       <section className="max-w-6xl mx-auto px-6 py-10">
-        <div className="flex flex-col md:flex-row gap-4 justify-between">
+        <div className="flex flex-col md:flex-row gap-4 text-black justify-between">
      
 
           <input
