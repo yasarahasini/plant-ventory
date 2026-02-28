@@ -60,7 +60,7 @@ const Page: React.FC = () => {
         <h1 className="text-4xl font-bold text-green-700 mb-3">
           Explore Plant-ventory 🌿
         </h1>
-        <p className="text-gray-600">
+        <p className="bg-gradient-to-r from-red-500 via-blue-900 to-green-500 text-transparent bg-clip-text">
           Discover plants by category and explore our featured collection.
         </p>
 
