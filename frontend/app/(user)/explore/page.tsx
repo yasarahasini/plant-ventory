@@ -120,7 +120,7 @@ const Page: React.FC = () => {
               <p className="text-gray-600 mt-2">
                 {plant.description}
               </p>
-              <button className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition">
+              <button className="mt-4 bg-green-600 hover:bg-green-800 text-white px-4 py-2 rounded-lg transition">
                 View Details
               </button>
             </div>
