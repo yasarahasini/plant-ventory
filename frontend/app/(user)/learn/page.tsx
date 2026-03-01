@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/dist/client/link";
 
 
 
@@ -165,10 +166,12 @@ function PlantCard({ plant }: { plant: PlantInfo }) {
         <p className="text-gray-700 text-sm">
           🇱🇰 {plant.descriptionSi}
         </p>
-
-        <button className="w-full mt-4 bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 transition">
-          Read More
-        </button>
+<Link
+  href={`/learn/${plant.id}`}
+  className="block w-full mt-4 text-center bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 transition"
+>
+  Read More
+</Link>
       </div>
     </div>
   );
