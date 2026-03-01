@@ -27,7 +27,7 @@ const plantData: PlantInfo[] = [
       "Snake plant is a hardy indoor plant that requires very little water and care.",
     descriptionSi:
       "නාග දළ පැළෑටි යනු ඉතා අඩු ජලය සහ සැලකිල්ලක් අවශ්‍ය වන ශක්තිමත් ගෘහස්ථ පැළෑටියකි.",
-    image: "/p1.jpg",
+    image: "/Snake.jpg",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const plantData: PlantInfo[] = [
       "Aloe Vera is a medicinal plant widely used for skin care and healing.",
     descriptionSi:
       "කොමාරිකා යනු සම සුරැකුම සහ සුව කිරීම සඳහා භාවිතා වන ඖෂධීය පැළෑටියකි.",
-    image: "/p2.jpg",
+    image: "/Aloe Vera.jpg",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const plantData: PlantInfo[] = [
       "Peace Lily is a beautiful flowering plant that helps purify indoor air.",
     descriptionSi:
       "පීස් ලිලි යනු ගෘහස්ථ වාතය පිරිසිදු කිරීමට උපකාරී වන සුන්දර මල් පැළෑටියකි.",
-    image: "/p3.jpg",
+    image: "/Peace Lily.jpg",
   },
 ];
 
