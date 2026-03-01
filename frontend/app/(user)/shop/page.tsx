@@ -38,7 +38,7 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-between items-end mb-10">
             <div>
-              <h2 className="text-4xl font-black text-green-900 tracking-tight">
+              <h2 className="text-4xl font-black text-green-800 tracking-tight">
                 Featured Plants
               </h2>
               <p className="text-green-600 mt-2">
