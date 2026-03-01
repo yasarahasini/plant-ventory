@@ -30,7 +30,7 @@ export default function AboutSection() {
           <div className="md:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
               About{" "}
-              <span className="bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-transparent bg-clip-text">
                 Plantventory
               </span>
               <div className="bg-gradient-to-tr from-green-900 via-white to-green-500 w-100 h-1"></div>
