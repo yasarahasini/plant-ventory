@@ -18,7 +18,7 @@ const categories: Category[] = [
     id: 1,
     name: "Indoor Plants",
     image:
-      "/Fiddle Leaf Fig.jpg",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
