@@ -4,8 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/dist/client/link";
 
-
-
 interface PlantInfo {
   id: number;
   nameEn: string;
@@ -15,8 +13,6 @@ interface PlantInfo {
   descriptionSi: string;
   image: string;
 }
-
-
 
 const plantData: PlantInfo[] = [
   {
@@ -54,21 +50,16 @@ const plantData: PlantInfo[] = [
   },
 ];
 
-
-
 export default function LearnPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
-
- 
 
   const filteredPlants = plantData.filter((plant) => {
     const matchSearch =
       plant.nameEn.toLowerCase().includes(search.toLowerCase()) ||
       plant.nameSi.includes(search);
 
-    const matchCategory =
-      category === "All" || plant.category === category;
+    const matchCategory = category === "All" || plant.category === category;
 
     return matchSearch && matchCategory;
   });
@@ -77,23 +68,18 @@ export default function LearnPage() {
 
   return (
     <div className="min-h-screen bg-green-50">
-
       <section className="bg-green-900 text-white py-16 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-black">
           🌱 Plant Encyclopedia
         </h1>
         <p className="mt-4 text-green-200 max-w-2xl mx-auto">
-          Learn about plants in English and Sinhala —
-          පැළෑටි ගැන ඉංග්‍රීසි සහ සිංහලෙන් ඉගෙන ගන්න
+          Learn about plants in English and Sinhala — පැළෑටි ගැන ඉංග්‍රීසි සහ
+          සිංහලෙන් ඉගෙන ගන්න
         </p>
       </section>
 
-  
-
       <section className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row gap-4 text-black justify-between">
-     
-
           <input
             type="text"
             placeholder="🔍 Search plants..."
@@ -101,8 +87,6 @@ export default function LearnPage() {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full md:w-1/2 px-4 py-3 rounded-xl border border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
-
-          
 
           <select
             value={category}
@@ -115,8 +99,6 @@ export default function LearnPage() {
           </select>
         </div>
       </section>
-
-   
 
       <section className="max-w-6xl mx-auto px-6 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredPlants.length === 0 && (
@@ -132,7 +114,6 @@ export default function LearnPage() {
     </div>
   );
 }
-
 
 function PlantCard({ plant }: { plant: PlantInfo }) {
   return (
@@ -151,27 +132,19 @@ function PlantCard({ plant }: { plant: PlantInfo }) {
           {plant.category}
         </span>
 
-        <h2 className="text-2xl font-bold text-green-900">
-          {plant.nameEn}
-        </h2>
+        <h2 className="text-2xl font-bold text-green-900">{plant.nameEn}</h2>
 
-        <h3 className="text-lg font-semibold text-green-700">
-          {plant.nameSi}
-        </h3>
+        <h3 className="text-lg font-semibold text-green-700">{plant.nameSi}</h3>
 
-        <p className="text-gray-700 text-sm">
-          🇬🇧 {plant.descriptionEn}
-        </p>
+        <p className="text-gray-700 text-sm">🇬🇧 {plant.descriptionEn}</p>
 
-        <p className="text-gray-700 text-sm">
-          🇱🇰 {plant.descriptionSi}
-        </p>
-<Link
-  href={`/learn/${plant.id}`}
-  className="block w-full mt-4 text-center bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 transition"
->
-  Read More
-</Link>
+        <p className="text-gray-700 text-sm">🇱🇰 {plant.descriptionSi}</p>
+        <Link
+          href={`/learnn/${plant.id}`}
+          className="block w-full mt-4 text-center bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 transition"
+        >
+          Read More
+        </Link>
       </div>
     </div>
   );
