@@ -6,7 +6,7 @@ const Page: React.FC = () => {
     <div className="min-h-screen bg-green-50 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8">
         
-        <h1 className="text-3xl font-bold text-center text-green-800 mb-2">
+        <h1 className="text-3xl font-bold text-center text-green-900 mb-2">
           Contact Plant-ventory 🌿
         </h1>
         <p className="text-center text-gray-500 mb-8">
