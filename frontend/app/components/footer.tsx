@@ -1,18 +1,31 @@
-import React from 'react'
+import React from "react";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-green-900 text-white mt-16">
-      <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
-        <p>© 2026 Plantventory. All rights reserved.</p>
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#" className="hover:text-gray-200">Facebook</a>
-          <a href="#" className="hover:text-gray-200">Instagram</a>
-          <a href="#" className="hover:text-gray-200">Twitter</a>
+    <footer
+      className="relative text-white mt-16 bg-cover bg-center min-h-[300px]"
+      style={{ backgroundImage: "url('/images/footer-bg.jpg')" }}
+    >
+    
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row justify-between items-center">
+        <p className="text-lg">© 2026 Plantventory. All rights reserved.</p>
+
+        <div className="flex space-x-6 mt-6 md:mt-0 text-lg">
+          <a href="#" className="hover:text-green-300 transition">
+            Facebook
+          </a>
+          <a href="#" className="hover:text-green-300 transition">
+            Instagram
+          </a>
+          <a href="#" className="hover:text-green-300 transition">
+            Twitter
+          </a>
         </div>
       </div>
     </footer>
   );
-} 
+};
 
-export default Footer
+export default Footer;
