@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       className="relative text-white mt-16 bg-cover bg-center min-h-[300px]"
-      style={{ backgroundImage: "url('/images/footer-bg.jpg')" }}
+      style={{ backgroundImage: "url('/home.jpg')" }}
     >
     
       <div className="absolute inset-0 bg-black/50"></div>
