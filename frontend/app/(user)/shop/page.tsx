@@ -14,9 +14,9 @@ interface Plant {
 }
 
 const plants: Plant[] = [
-  { id: 1, name: "Snake Plant", quantity: 25, price: 15, image: "/p1.jpg", category: "Indoor" },
-  { id: 2, name: "Aloe Vera", quantity: 40, price: 10, image: "/p2.jpg", category: "Medicinal" },
-  { id: 3, name: "Peace Lily", quantity: 18, price: 20, image: "/p3.jpg", category: "Flowering" },
+  { id: 1, name: "Snake Plant", quantity: 25, price: 15, image: "/Snake.jpg", category: "Indoor" },
+  { id: 2, name: "Aloe Vera", quantity: 40, price: 10, image: "/alo.jpg", category: "Medicinal" },
+  { id: 3, name: "Peace Lily", quantity: 18, price: 20, image: "/lily.jpg", category: "Flowering" },
 ];
 
 export default function Home() {
