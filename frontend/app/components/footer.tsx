@@ -3,7 +3,7 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <footer
-      className="relative text-white mt-16 bg-cover bg-center min-h-[300px]"
+      className="relative text-white mt-16 bg-cover bg-center min-h-[600px]"
       style={{ backgroundImage: "url('/home.jpg')" }}
     >
     
