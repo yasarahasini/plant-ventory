@@ -20,7 +20,7 @@ const GetStartedPage = () => {
      
         <div className="hidden md:block md:w-1/2">
           <img
-            src="/home3.jpg"
+            src="/login2.jpg"
             alt="Get Started Plantventory"
             className="rounded-2xl object-cover shadow-lg"
           />
@@ -41,7 +41,7 @@ const GetStartedPage = () => {
               placeholder="Full Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="px-4 py-3 border text-green-700 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               required
             />
 
@@ -50,7 +50,7 @@ const GetStartedPage = () => {
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="px-4 py-3 border text-green-700 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               required
             />
 
@@ -59,7 +59,7 @@ const GetStartedPage = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="px-4 py-3 border border-slate-300 text-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               required
             />
 
