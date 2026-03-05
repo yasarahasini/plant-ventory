@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
 
     
         <div>
-          <h3 className="text-2xl font-semibold mb-4 text-green-300">
-            Plantventory
-          </h3>
+         <span className="text-2xl font-bold tracking-tight">
+           <span className="text-emerald-300">Plant</span> <span className="bg-gradient-to-r from-red-500 via-yellow-400 to-green-700 text-transparent bg-clip-text">ventory</span>
+          </span>
           <p className="text-gray-200">
             Plantventory is a modern platform to explore plants, learn plant
             care tips, and manage your personal plant collection easily.
