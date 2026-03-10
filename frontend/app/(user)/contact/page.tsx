@@ -3,7 +3,7 @@ import React from "react";
 
 const Page: React.FC = () => {
   return (
-    <div className="min-h-screen bg-green-50 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-white  to-green-400 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8">
         
         <h1 className="text-3xl font-bold text-center text-green-900 mb-2">
