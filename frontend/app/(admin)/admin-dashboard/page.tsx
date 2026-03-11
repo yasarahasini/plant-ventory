@@ -30,6 +30,7 @@ export default function AdminDashboard() {
         <nav className="space-y-1 flex-1">
           <NavItem label="Overview" active />
           <NavItem label="Inventory" />
+          
           <NavItem label="Orders" />
           <NavItem label="Suppliers" />
           <NavItem label="Settings" />
