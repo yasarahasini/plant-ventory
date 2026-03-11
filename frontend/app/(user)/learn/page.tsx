@@ -143,7 +143,7 @@ function PlantCard({ plant }: { plant: PlantInfo }) {
           href={`/learnn/${plant.id}`}
           className="block w-full mt-4 text-center bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 transition"
         >
-          Read More
+         
         </Link>
       </div>
     </div>
