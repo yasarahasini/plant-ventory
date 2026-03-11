@@ -81,7 +81,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
 
         <div className="grid grid-cols-2 gap-3">
           <button className="bg-emerald-900 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-800 active:scale-95 transition-all">
-            Edit Stock
+            Add To Cart
           </button>
           <button className="bg-white text-slate-600 border border-slate-200 py-2.5 rounded-xl font-bold text-sm hover:bg-slate-50 transition-all">
             Details
