@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { PlantCard } from "@/app/components/plantcard"; // Assuming you move the card to a component
+import { PlantCard } from "@/app/components/plantcard"; 
 
 interface Plant {
   id: number;
@@ -41,7 +41,7 @@ export default function PlantsPage() {
     <div className="min-h-screen bg-stone-50 pt-24 pb-12">
       <div className="container mx-auto px-6">
         
-        {/* --- Header & Stats --- */}
+        
         <header className="mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
@@ -62,7 +62,7 @@ export default function PlantsPage() {
           </div>
         </header>
 
-        {/* --- Filters & Search --- */}
+
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-10 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
@@ -94,7 +94,7 @@ export default function PlantsPage() {
           </div>
         </div>
 
-        {/* --- Main Grid --- */}
+      
         {filteredPlants.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPlants.map((plant) => (
