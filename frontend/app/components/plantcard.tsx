@@ -12,13 +12,13 @@ interface Plant {
 }
 
 export function PlantCard({ plant }: { plant: Plant }) {
-  // Logic for stock status colors
+ 
   const isLowStock = plant.quantity < 10;
   const stockPercentage = Math.min((plant.quantity / 50) * 100, 100);
 
   return (
     <div className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-emerald-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.04)] transition-all duration-500">
-      {/* --- Image Header --- */}
+   
       <div className="relative h-64 overflow-hidden">
         <img
           src={plant.image}
@@ -26,14 +26,14 @@ export function PlantCard({ plant }: { plant: Plant }) {
           className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
         />
         
-        {/* Category Badge */}
+     
         <div className="absolute top-4 left-4">
           <span className="bg-white/90 backdrop-blur-md text-emerald-900 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest shadow-sm">
             {plant.category}
           </span>
         </div>
 
-        {/* Status Indicator */}
+      
         <div className="absolute top-4 right-4">
           {isLowStock ? (
             <span className="flex items-center gap-1.5 bg-orange-50 text-orange-600 px-3 py-1 rounded-lg text-[10px] font-bold border border-orange-100">
@@ -48,7 +48,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
         </div>
       </div>
 
-      {/* --- Content --- */}
+    
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover:text-emerald-800 transition-colors">
@@ -61,7 +61,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
           SKU: {plant.name.substring(0, 3).toUpperCase()}-{plant.id}00X
         </p>
 
-        {/* --- Inventory Meter --- */}
+    
         <div className="space-y-2 mb-8">
           <div className="flex justify-between text-[11px] uppercase tracking-wider font-bold">
             <span className="text-slate-400">Current Availability</span>
@@ -79,7 +79,6 @@ export function PlantCard({ plant }: { plant: Plant }) {
           </div>
         </div>
 
-        {/* --- Action Buttons --- */}
         <div className="grid grid-cols-2 gap-3">
           <button className="bg-emerald-900 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-800 active:scale-95 transition-all">
             Edit Stock
