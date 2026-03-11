@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { PlantCard } from "@/components/PlantCard"; // Assuming you move the card to a component
+import { PlantCard } from "@/app/components/plantcard"; // Assuming you move the card to a component
 
 interface Plant {
   id: number;
