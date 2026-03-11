@@ -17,9 +17,9 @@ const ALL_PLANTS: Plant[] = [
   { id: 1, name: "Snake Plant", quantity: 25, price: 15, image: "/Snake.jpg", category: "Indoor" },
   { id: 2, name: "Aloe Vera", quantity: 40, price: 10, image: "/alo.jpg", category: "Medicinal" },
   { id: 3, name: "Peace Lily", quantity: 18, price: 20, image: "/lily.jpg", category: "Flowering" },
-  { id: 4, name: "Monstera Deliciosa", quantity: 12, price: 45, image: "/monstera.jpg", category: "Indoor" },
-  { id: 5, name: "Lavender", quantity: 55, price: 12, image: "/lavender.jpg", category: "Outdoor" },
-  { id: 6, name: "Fiddle Leaf Fig", quantity: 5, price: 85, image: "/fiddle.jpg", category: "Indoor" },
+  { id: 4, name: "Monstera Deliciosa", quantity: 12, price: 45, image: "/Monstera Deliciosa.jpg", category: "Indoor" },
+  { id: 5, name: "Lavender", quantity: 55, price: 12, image: "/Lavender.jpg", category: "Outdoor" },
+  { id: 6, name: "Fiddle Leaf Fig", quantity: 5, price: 85, image: "/Fiddle Leaf Fig12.jpg", category: "Indoor" },
 ];
 
 const CATEGORIES = ["All", "Indoor", "Outdoor", "Medicinal", "Flowering"];
