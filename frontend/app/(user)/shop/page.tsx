@@ -20,37 +20,88 @@ const plants: Plant[] = [
 ];
 
 export default function Home() {
-  const heroImages = ["/plant1.jpg", "/plant2.jpg", "/plant3.jpg", "/plant4.jpg"];
-  const [currentImage, setCurrentImage] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-green-50">
+    <div className="min-h-screen bg-stone-50 font-sans text-slate-900">
+      {/* --- Navigation --- */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"}`}>
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <span className="text-2xl font-bold tracking-tighter text-emerald-900">
+            PLANT<span className="text-emerald-500">VENTORY</span>
+          </span>
+          <div className="space-x-8 text-sm font-medium">
+            <Link href="/plants" className="hover:text-emerald-600 transition">Inventory</Link>
+            <Link href="#" className="hover:text-emerald-600 transition">Analytics</Link>
+            <Link href="#" className="bg-emerald-900 text-white px-5 py-2 rounded-full hover:bg-emerald-800 transition">Log In</Link>
+          </div>
+        </div>
+      </nav>
 
- 
-      <section className="sticky top-0 z-10 bg-white border-b border-green-900 px-6 py-20 shadow-xl">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-end mb-10">
-            <div>
-              <h2 className="text-4xl font-black text-green-800 tracking-tight">
-                Featured Plants
-              </h2>
-              <p className="text-green-600 mt-2">
-                Healthy plants available in our inventory 🌱
+      {/* --- Hero Section --- */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 space-y-8 text-center lg:text-left">
+              <div className="inline-flex items-center space-x-2 bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>System Online</span>
+              </div>
+              <h1 className="text-5xl lg:text-7xl font-light leading-tight text-slate-900">
+                Precision <span className="font-serif italic text-emerald-800">Botany</span> Management.
+              </h1>
+              <p className="text-slate-500 text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                The professional-grade dashboard for nurseries and collectors. Track health, stock, and environmental data in one interface.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link href="/plants" className="bg-emerald-900 text-white px-10 py-4 rounded-xl font-semibold shadow-xl shadow-emerald-900/20 hover:bg-emerald-800 transition-all active:scale-95">
+                  Enter Dashboard
+                </Link>
+                <button className="border border-slate-200 bg-white text-slate-700 px-10 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all">
+                  Documentation
+                </button>
+              </div>
             </div>
-            <Link href="/plants" className="text-green-700 font-semibold hover:underline">
-              View All →
+
+            <div className="flex-1 relative">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-100 to-stone-100 rounded-[2rem] -rotate-3" />
+              <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl">
+                <Image
+                  src="/plant-hero.jpg"
+                  alt="Premium Plant"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Inventory Grid --- */}
+      <section className="py-24 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900">Live Inventory</h2>
+              <p className="text-slate-500">Current stock levels across all categories</p>
+            </div>
+            <Link href="/plants" className="text-emerald-700 font-bold text-sm hover:text-emerald-500 transition border-b-2 border-emerald-100 pb-1">
+              VIEW FULL DATABASE →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {plants.map((plant) => (
               <PlantCard key={plant.id} plant={plant} />
             ))}
@@ -58,118 +109,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sticky top-0 z-20 bg-green-900 text-white px-6 py-24 shadow-2xl">
-        <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <span className="bg-lime-400 text-black px-3 py-1 rounded-full text-sm font-bold uppercase">
-              PlantVentory
-            </span>
-
-            <h2 className="text-5xl md:text-7xl font-black leading-none uppercase italic">
-              Grow Your <br /> Green World
-            </h2>
-
-            <p className="text-green-200 text-lg leading-relaxed max-w-md">
-              Manage, track, and nurture your plants with our smart plant
-              inventory system.
-            </p>
-
-            <Link
-              href="/plants"
-              className="inline-block bg-white text-green-900 font-black px-8 py-4 rounded-full hover:bg-lime-400 transition-colors duration-300"
-            >
-              VIEW PLANTS
-            </Link>
-          </div>
-
-          <div className="relative group">
-            <div className="absolute inset-0 bg-lime-400/20 blur-3xl rounded-full group-hover:bg-lime-400/30 transition" />
-
-            <div className="relative aspect-square w-72 mx-auto rounded-full overflow-hidden">
-              <Image
-                src="/plant-hero.jpg"
-                alt="Plant"
-                fill
-                priority
-                className="object-cover rounded-full"
-              />
-            </div>
-          </div>
+      {/* --- Footer Stats --- */}
+      <footer className="bg-emerald-950 text-emerald-100/50 py-12 border-t border-emerald-900">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-sm">© 2024 PlantVentory Systems. Optimized for Professional Greenhouses.</p>
         </div>
-      </section>
-
-    
-      <section className="sticky top-0 z-30 bg-blue-900 text-white px-6 py-20">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">
-            Inventory Overview
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {plants.map((plant) => (
-              <div
-                key={plant.id}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl hover:bg-white/20 transition"
-              >
-                <div className="relative h-40 mb-4 rounded-lg overflow-hidden">
-                  <img
-                    src={plant.image}
-                    alt={plant.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <h3 className="font-bold text-xl">{plant.name}</h3>
-                <p className="text-green-100 mb-2">
-                  Category: {plant.category}
-                </p>
-                <p className="text-green-100 mb-4">
-                  Stock: {plant.quantity} plants
-                </p>
-
-                <button className="w-full bg-white text-green-700 font-bold py-2 rounded-lg hover:bg-green-50">
-                  View Details
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </footer>
     </div>
   );
 }
 
 function PlantCard({ plant }: { plant: Plant }) {
   return (
-    <div className="group bg-white rounded-3xl overflow-hidden border border-green-100 hover:shadow-2xl transition-all duration-500">
-      <div className="relative h-64 overflow-hidden">
+    <div className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-emerald-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500">
+      <div className="relative h-72 overflow-hidden">
         <img
           src={plant.image}
           alt={plant.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
         />
-      </div>
-
-      <div className="p-6">
-        <span className="text-green-700 text-xs font-bold uppercase tracking-widest">
-          {plant.category}
-        </span>
-
-        <h3 className="text-xl font-bold text-green-900 mt-1">
-          {plant.name}
-        </h3>
-
-        <div className="flex items-center justify-between mt-4">
-          <span className="text-lg font-bold text-green-800">
-            ${plant.price}
-          </span>
-          <span className="text-sm text-gray-500">
-            Stock: {plant.quantity}
+        <div className="absolute top-4 left-4">
+          <span className="bg-white/90 backdrop-blur text-emerald-900 px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-tighter">
+            {plant.category}
           </span>
         </div>
+      </div>
 
-        <button className="mt-6 w-full bg-green-900 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition-colors">
-          Manage Plant
+      <div className="p-8">
+        <div className="flex justify-between items-start mb-4">
+          <div>
+            <h3 className="text-xl font-bold text-slate-900 leading-tight">
+              {plant.name}
+            </h3>
+            <p className="text-slate-400 text-xs mt-1 italic tracking-wide">ID: #00{plant.id}LN</p>
+          </div>
+          <span className="text-2xl font-light text-emerald-900">${plant.price}</span>
+        </div>
+
+        <div className="space-y-3 pt-4 border-t border-slate-50">
+          <div className="flex justify-between text-sm">
+            <span className="text-slate-400">Available Stock</span>
+            <span className={`font-mono font-bold ${plant.quantity < 20 ? 'text-orange-500' : 'text-emerald-600'}`}>
+              {plant.quantity} units
+            </span>
+          </div>
+          {/* Visual Stock Bar */}
+          <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+            <div 
+              className="bg-emerald-500 h-full rounded-full" 
+              style={{ width: `${Math.min((plant.quantity / 50) * 100, 100)}%` }}
+            />
+          </div>
+        </div>
+
+        <button className="mt-8 w-full bg-emerald-50 text-emerald-700 py-3 rounded-xl font-bold hover:bg-emerald-900 hover:text-white transition-all duration-300">
+          Open Record
         </button>
       </div>
     </div>
