@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
     
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
-          <p>Email: info@plantventory.com</p>
+          <p>Email: yash@plantventory.com</p>
           <p>Phone: +94 71 054 9560</p>
           <p>Location: Colombo, Sri Lanka</p>
         </div>
