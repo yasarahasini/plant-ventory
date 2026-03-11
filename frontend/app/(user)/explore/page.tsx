@@ -18,7 +18,7 @@ const categories: Category[] = [
     id: 1,
     name: "Indoor Plants",
     image:
-      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
+      "/Indoor Plants.jpg",
   },
   {
     id: 2,
@@ -39,14 +39,14 @@ const featuredPlants: Plant[] = [
     id: 1,
     name: "Fiddle Leaf Fig",
     image:
-      "https://images.unsplash.com/photo-1616628182506-1a6e99b0401d?auto=format&fit=crop&w=800&q=80",
+      "/Fiddle Leaf Fig2.jpg",
     description: "A trendy indoor plant with large green leaves.",
   },
   {
     id: 2,
     name: "ZZ Plant",
     image:
-      "https://images.unsplash.com/photo-1593691509543-c55fb32b3c39?auto=format&fit=crop&w=800&q=80",
+      "/ZZ Plant.jpg",
     description: "Low maintenance and perfect for beginners.",
   },
 ];
