@@ -76,7 +76,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-100 to-stone-100 rounded-[2rem] -rotate-3" />
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="/plant-hero.jpg"
+                  src="/000.jpg"
                   alt="Premium Plant"
                   fill
                   className="object-cover"
