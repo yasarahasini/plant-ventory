@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-stone-50 font-sans text-slate-900">
-      {/* --- Navigation --- */}
+  
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <span className="text-2xl font-bold tracking-tighter text-emerald-900">
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* --- Hero Section --- */}
+   
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- Inventory Grid --- */}
+ 
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- Footer Stats --- */}
+   
       <footer className="bg-emerald-950 text-emerald-100/50 py-12 border-t border-emerald-900">
         <div className="container mx-auto px-6 text-center">
           <p className="text-sm">© 2024 PlantVentory Systems. Optimized for Professional Greenhouses.</p>
@@ -153,7 +153,7 @@ function PlantCard({ plant }: { plant: Plant }) {
               {plant.quantity} units
             </span>
           </div>
-          {/* Visual Stock Bar */}
+        
           <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
             <div 
               className="bg-emerald-500 h-full rounded-full" 
