@@ -46,7 +46,7 @@ export default function AdminShopPage() {
         </button>
       </div>
 
-      {/* Search */}
+     
 
       <div className="bg-white p-4 rounded-xl border mb-8 flex items-center gap-3">
         <FiSearch className="text-slate-400"/>
@@ -58,7 +58,7 @@ export default function AdminShopPage() {
       </div>
 
 
-      {/* Table */}
+     
 
       <div className="bg-white rounded-2xl border overflow-hidden">
 
