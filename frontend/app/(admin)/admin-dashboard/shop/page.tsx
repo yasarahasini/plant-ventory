@@ -28,8 +28,7 @@ export default function AdminShopPage() {
   return (
 
     <div className="p-10 bg-slate-50 min-h-screen">
-
-      {/* Header */}
+ 
 
       <div className="flex justify-between items-center mb-10">
         <div>
