@@ -38,8 +38,8 @@ export default function AdminDashboard() {
         <nav className="space-y-1 flex-1">
           <NavItem icon={<FiHome />} label="Overview" href="/admin" active={pathname === "/admin"} />
           <NavItem icon={<FiPackage />} label="Inventory" href="/admin/inventory" active={pathname === "/admin/inventory"} />
-          <NavItem icon={<FiShoppingCart />} label="Orders" href="/admin/contact" active={pathname === "/admin/contact"} />
-          <NavItem icon={<FiTruck />} label="Suppliers" href="/admin/shop" active={pathname === "/admin/shop"} />
+          <NavItem icon={<FiShoppingCart />} label="Contact" href="/admin/contact" active={pathname === "/admin/contact"} />
+          <NavItem icon={<FiTruck />} label="Shop" href="/admin/shop" active={pathname === "/admin/shop"} />
           <NavItem icon={<FiSettings />} label="Settings" href="/admin/settings" active={pathname === "/admin/settings"} />
         </nav>
 
