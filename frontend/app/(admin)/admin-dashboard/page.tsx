@@ -28,7 +28,7 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-[#f8fafc] flex">
 
-      {/* Sidebar */}
+    
       <aside className="w-64 bg-emerald-950 text-white hidden lg:flex flex-col p-6 sticky top-0 h-screen">
         <div className="mb-10 flex items-center gap-2">
           <div className="w-8 h-8 bg-emerald-500 rounded-lg" />
@@ -49,10 +49,8 @@ export default function AdminDashboard() {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 p-8 lg:p-12 overflow-y-auto">
 
-        {/* Header */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
           <div>
             <h1 className="text-3xl font-bold text-slate-900">Inventory Dashboard</h1>
@@ -70,7 +68,7 @@ export default function AdminDashboard() {
           </div>
         </header>
 
-        {/* Stats */}
+    
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <StatCard
             title="Total Stock Value"
@@ -97,7 +95,7 @@ export default function AdminDashboard() {
           />
         </div>
 
-        {/* Table */}
+    
         <section className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
           <div className="p-6 border-b border-slate-100 flex justify-between items-center">
             <h2 className="font-bold text-slate-800">Recent Plant Records</h2>
@@ -173,7 +171,7 @@ export default function AdminDashboard() {
   );
 }
 
-/* Stat Card */
+
 
 function StatCard({ title, value, icon, trend, color }: any) {
   const colorMap: any = {
@@ -207,7 +205,7 @@ function StatCard({ title, value, icon, trend, color }: any) {
   );
 }
 
-/* Sidebar Item */
+
 
 function NavItem({ icon, label, href, active }: any) {
   return (
