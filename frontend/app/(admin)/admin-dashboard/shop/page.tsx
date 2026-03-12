@@ -36,7 +36,7 @@ export default function AdminShopPage() {
           <h1 className="text-3xl font-bold text-slate-900">
             Shop Inventory
           </h1>
-          <p className="text-slate-500">
+          <p className="text-slate-800">
             Manage all plants in your store
           </p>
         </div>
@@ -49,11 +49,11 @@ export default function AdminShopPage() {
      
 
       <div className="bg-white p-4 rounded-xl border mb-8 flex items-center gap-3">
-        <FiSearch className="text-slate-400"/>
+        <FiSearch className="text-slate-700"/>
         <input
           type="text"
           placeholder="Search plants..."
-          className="w-full outline-none text-sm"
+          className="w-full outline-none text-sm text-black"
         />
       </div>
 
@@ -64,7 +64,7 @@ export default function AdminShopPage() {
 
         <table className="w-full text-left">
 
-          <thead className="bg-slate-100 text-slate-500 text-xs uppercase">
+          <thead className="bg-slate-100 text-slate-700 text-xs uppercase">
             <tr>
               <th className="p-4">Plant</th>
               <th className="p-4">Category</th>
