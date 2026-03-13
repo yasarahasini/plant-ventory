@@ -56,7 +56,7 @@ export default function ContactPage() {
 
 
             <div className="flex items-start gap-4">
-              <div className="p-4 bg-emerald-100 rounded-xl text-emerald-700">
+              <div className="p-4 bg-emerald-100 rounded-xl text-emerald-800">
                 <FiMail size={22}/>
               </div>
 
