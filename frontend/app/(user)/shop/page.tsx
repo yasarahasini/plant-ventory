@@ -66,9 +66,9 @@ export default function Home() {
                 <Link href="/plants" className="bg-emerald-900 text-white px-10 py-4 rounded-xl font-semibold shadow-xl shadow-emerald-900/20 hover:bg-emerald-800 transition-all active:scale-95">
                   Enter Dashboard
                 </Link>
-                <button className="border border-slate-200 bg-white text-slate-700 px-10 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all">
+                <Link href="/learn" className="border border-slate-200 bg-white text-slate-700 px-10 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all">
                   Documentation
-                </button>
+                </Link>
               </div>
             </div>
 
