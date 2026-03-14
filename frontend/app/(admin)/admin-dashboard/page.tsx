@@ -26,7 +26,7 @@ export default function AdminDashboard() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] flex">
+    <div className="min-h-screen bg-[#f8fafc] flex py-20 ">
 
     
       <aside className="w-64 bg-emerald-950 text-white hidden lg:flex flex-col p-6 sticky top-0 h-screen">
