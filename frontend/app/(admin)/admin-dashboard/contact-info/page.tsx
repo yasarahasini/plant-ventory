@@ -8,7 +8,7 @@ export default function ContactPage() {
 
       <div className="container mx-auto px-6">
 
-        {/* Page Title */}
+     
 
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900">
@@ -22,7 +22,7 @@ export default function ContactPage() {
 
         <div className="grid md:grid-cols-2 gap-16">
 
-          {/* Contact Information */}
+        
 
           <div className="space-y-10">
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
           </div>
 
 
-          {/* Contact Form */}
+      
 
           <div className="bg-white p-10 rounded-2xl border border-slate-200 shadow-sm">
 
@@ -113,7 +113,7 @@ export default function ContactPage() {
         </div>
 
 
-        {/* Map */}
+   
 
         <div className="mt-20 rounded-2xl overflow-hidden border">
           <iframe
