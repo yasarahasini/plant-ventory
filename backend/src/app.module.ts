@@ -4,6 +4,8 @@ import { AuthModule } from './auth/auth.module';
 import { User } from './auth/user.entity';
 import { ContactModule } from './contact/contact.module';
 import { InventoryModule } from './inventory/inventory.module';
+import { Contact } from './contact/entity/contact.entity';
+import { Inventory } from './inventory/entity/inventory.entity';
 
 @Module({
   imports: [
@@ -14,7 +16,7 @@ import { InventoryModule } from './inventory/inventory.module';
       username: 'postgres',
       password: '12345', 
       database: 'plantventory',
-      entities: [User],
+      entities: [User, Contact, Inventory],
       synchronize: true, 
     }),
     AuthModule,
