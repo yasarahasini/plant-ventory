@@ -147,12 +147,7 @@ export default function AboutSection() {
             </button>
           </div>
         </section>
-
-
-       
       </main>
-
-      <Footer />
     </div>
   );
 }
