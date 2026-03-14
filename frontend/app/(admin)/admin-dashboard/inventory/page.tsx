@@ -69,7 +69,7 @@ export default function PlantInventory() {
     <div style={{ padding: "40px", backgroundColor: "white" }}>
       <h1 style={{ marginBottom: "20px" }}>Plant Inventory</h1>
 
-      {/* Add Plant Form */}
+    
     <form onSubmit={addPlant} style={{ marginBottom: "30px", color: "black" }}>
         <input
           type="text"
@@ -111,7 +111,7 @@ export default function PlantInventory() {
         </button>
       </form>
 
-      {/* Plants List */}
+    
       <div
         style={{
           display: "grid",
