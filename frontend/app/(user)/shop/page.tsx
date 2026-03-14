@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-stone-50 font-sans text-slate-900">
   
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-20"}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <span className="text-2xl font-bold tracking-tighter text-emerald-900">
             PLANT<span className="text-emerald-500">VENTORY</span>
