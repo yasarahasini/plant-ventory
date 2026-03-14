@@ -22,7 +22,7 @@ export default function PlantInventory() {
   });
 
   const fetchPlants = async () => {
-    const res = await fetch("http://localhost:3000/plants");
+    const res = await fetch("http://localhost:3001/inventory");
     const data = await res.json();
     setPlants(data);
   };
@@ -34,7 +34,7 @@ export default function PlantInventory() {
   const addPlant = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await fetch("http://localhost:3000/plants", {
+    await fetch("http://localhost:3001/inventory", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function PlantInventory() {
   };
 
   const deletePlant = async (id: number) => {
-    await fetch(`http://localhost:3000/plants/${id}`, {
+    await fetch(`http://localhost:3001/inventory/${id}`, {
       method: "DELETE",
     });
 
@@ -117,6 +117,7 @@ export default function PlantInventory() {
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
           gap: "20px",
+          color: "black",
         }}
       >
         {plants.map((plant) => (
