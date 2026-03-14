@@ -110,11 +110,7 @@ export default function Home() {
       </section>
 
    
-      <footer className="bg-emerald-950 text-emerald-100/50 py-12 border-t border-emerald-900">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm">© 2024 PlantVentory Systems. Optimized for Professional Greenhouses.</p>
-        </div>
-      </footer>
+  
     </div>
   );
 }
