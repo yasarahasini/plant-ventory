@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
 import { ContactService } from './contact.service';
-import { CreateContactDto } from './create-contact.dto';
-import { Contact } from './contact.entity';
+import { CreateContactDto } from './dto/create-contact.dto';
+import { Contact } from './entity/contact.entity';
 
 @Controller('contact')
 export class ContactController {
