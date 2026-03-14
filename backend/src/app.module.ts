@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { User } from './auth/user.entity';
 import { ContactModule } from './contact/contact.module';
+import { InventoryModule } from './inventory/inventory.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ContactModule } from './contact/contact.module';
     }),
     AuthModule,
     ContactModule,
+    InventoryModule,
   ],
 })
 export class AppModule {}
