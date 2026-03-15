@@ -159,7 +159,7 @@ function PlantCard({ plant }: { plant: Plant }) {
         </div>
 
         <button className="mt-8 w-full bg-emerald-50 text-emerald-700 py-3 rounded-xl font-bold hover:bg-emerald-900 hover:text-white transition-all duration-300">
-       Add To Cart
+       
         </button>
       </div>
     </div>
