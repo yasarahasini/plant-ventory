@@ -1,149 +1,132 @@
 "use client";
 
 import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 import { ArrowRight, Leaf, Droplets, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
+  const mainRef = useRef(null);
   const images = ["/home5.jpg", "/home.jpg", "/home1.jpg"];
-
   const [currentImage, setCurrentImage] = useState(0);
 
+  // Image Slider Logic
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
-
     return () => clearInterval(interval);
+  }, [images.length]);
+
+  // GSAP Scroll Animation Logic
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Timeline for background transitions
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: mainRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1, // Smooth transition tied to scroll
+        },
+      });
+
+      tl.to(mainRef.current, { backgroundColor: "#f0fdf4" }) // Initial Green (emerald-50)
+        .to(mainRef.current, { backgroundColor: "#faf5ff" }) // Transition to Purple (purple-50)
+        .to(mainRef.current, { backgroundColor: "#fefce8" }); // Transition to Yellow (yellow-50)
+    }, mainRef);
+
+    return () => ctx.revert(); // Cleanup on unmount
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fcfdfa] text-slate-900">
+    <div ref={mainRef} className="flex flex-col min-h-screen transition-colors duration-500">
       <Navbar />
 
       <main className="flex-grow">
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+        {/* SECTION 1: HERO (Green Theme) */}
+        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
           <div
-            className="absolute inset-0 bg-cover bg-center animate-zoom-slow"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80')",
+              backgroundImage: "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80')",
             }}
           />
-
-          <div className="absolute inset-0 bg-black/20" />
-
+          <div className="absolute inset-0 bg-black/30" />
+          
           <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
             <motion.span
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wide text-emerald-200 uppercase bg-emerald-900/40 rounded-full backdrop-blur"
+              className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wide text-emerald-200 uppercase bg-emerald-900/60 rounded-full backdrop-blur"
             >
               Digital Gardening Made Simple
             </motion.span>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
-            >
-              Grow smarter with{" "}
-              <span className="text-emerald-400">Plantventory</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-10 leading-relaxed"
-            >
-              The modern sanctuary for your botanical collection. Organize,
-              track, and nurture your plants with precision and ease.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
-            >
-              <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-emerald-900/30 flex items-center justify-center gap-2">
-                <Link href="/get-start" className="flex items-center gap-2">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
+              Grow smarter with <span className="text-emerald-400">Plantventory</span>
+            </h1>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+               <Link href="/get-start" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl flex items-center justify-center gap-2">
                   Get Started Free <ArrowRight size={18} />
-                </Link>
-              </button>
-
-              <button className="px-8 py-4 bg-white/20 backdrop-blur border border-white/30 hover:bg-white/30 text-white font-semibold rounded-xl transition-all">
-                <Link href="/explore" className="flex items-center gap-2">
-                  {" "}
-                  Explore Features
-                </Link>
-              </button>
-            </motion.div>
+               </Link>
+            </div>
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-6 py-24 shadow hover:shadow-lg transition-all shadow-green-200">
-          <div className="grid md:grid-cols-3 gap-8 ">
+        {/* SECTION 2: FEATURES (Purple Theme) */}
+        <section id="features" className="max-w-6xl mx-auto px-6 py-32">
+          <div className="text-center mb-16">
+             <h2 className="text-3xl font-bold text-purple-900">Advanced Features</h2>
+             <p className="text-purple-700">Everything you need to keep your garden thriving.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<Leaf className="text-emerald-600 " size={28} />}
+              icon={<Leaf className="text-purple-600" size={28} />}
               title="Smart Inventory"
-              description="A centralized digital catalog for every species in your home, complete with custom notes and photos."
+              description="A centralized digital catalog for every species in your home."
               delay={0}
             />
             <FeatureCard
               icon={<Droplets className="text-blue-500" size={28} />}
               title="Care Precision"
-              description="Automated reminders for watering, fertilizing, and repotting based on seasonal needs."
-              delay={0.15}
+              description="Automated reminders for watering, fertilizing, and repotting."
+              delay={0.1}
             />
             <FeatureCard
-              icon={<LineChart className="text-emerald-600" size={28} />}
+              icon={<LineChart className="text-purple-600" size={28} />}
               title="Growth Analytics"
-              description="Visualize the journey of your plants through height charts, health logs, and time-lapse logs."
-              delay={0.3}
+              description="Visualize the journey of your plants through height charts."
+              delay={0.2}
             />
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
+        {/* SECTION 3: ABOUT (Yellow Theme) */}
+        <section id="about" className="max-w-6xl mx-auto px-6 py-32 flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2 overflow-hidden rounded-3xl shadow-2xl">
             <img
               src={images[currentImage]}
               alt="Plantventory App"
-              className="w-full rounded-3xl shadow-lg object-cover transition-all duration-700 ease-in-out"
+              className="w-full h-[400px] object-cover transition-all duration-1000"
             />
           </div>
 
-          <div className="md:w-1/2 flex flex-col justify-center">
+          <div className="md:w-1/2">
             <h2 className="text-4xl font-extrabold text-slate-900 mb-6">
-              About{" "}
-              <span className="bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 text-transparent bg-clip-text">
-                Plantventory
-              </span>
-              <div className="bg-gradient-to-tr from-green-900 via-white to-green-500 w-100 h-1"></div>
+              About <span className="text-yellow-600">Plantventory</span>
+              <div className="h-1 w-20 bg-yellow-500 mt-2"></div>
             </h2>
-            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-              Plantventory is your digital gardening assistant. Organize your
-              plants, track their growth, and receive care reminders to help
-              every plant thrive. Perfect for beginners and plant enthusiasts
-              alike.
-            </p>
             <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-              With Plantventory, you can create a personalized plant catalog,
-              log watering schedules, and analyze plant growth over time. Turn
-              your home into a lush, healthy garden effortlessly.
+              We combine data science with botany. Our mission is to ensure no leaf turns brown. Join thousands of plant parents using our predictive care models.
             </p>
-            <button className="w-max px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all shadow-lg">
-              <Link href="/learn" className="flex items-center gap-2">
-                {" "}
-                Learn More
-              </Link>
+            <button className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold rounded-xl transition-all shadow-lg">
+               Learn More
             </button>
           </div>
         </section>
@@ -152,26 +135,16 @@ export default function AboutSection() {
   );
 }
 
-function FeatureCard({
-  icon,
-  title,
-  description,
-  delay,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  delay: number;
-}) {
+function FeatureCard({ icon, title, description, delay }: any) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      className="group bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+      transition={{ duration: 0.5, delay }}
+      className="bg-white/50 backdrop-blur-sm border border-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all"
     >
-      <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3 text-slate-800">{title}</h3>
