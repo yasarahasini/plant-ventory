@@ -66,8 +66,8 @@ export default function PlantInventory() {
   };
 
   return (
-    <div style={{ padding: "40px", backgroundColor: "white" }}>
-      <h1 style={{ marginBottom: "20px" }}>Plant Inventory</h1>
+    <div style={{ padding: "90px", backgroundColor: "white" }}>
+      <h1 style={{ marginBottom: "20px", color: "black" }}>Plant Inventory</h1>
 
     
     <form onSubmit={addPlant} style={{ marginBottom: "30px", color: "black" }}>
