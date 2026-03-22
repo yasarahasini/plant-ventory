@@ -36,10 +36,10 @@ export default function AdminDashboard() {
         </div>
 
         <nav className="space-y-1 flex-1">
-          <NavItem icon={<FiHome />} label="Overview" href="/admin" active={pathname === "/admin"} />
-          <NavItem icon={<FiPackage />} label="Inventory" href="/admin-dashboard/inventory" active={pathname === "/admin/inventory"} />
-          <NavItem icon={<FiShoppingCart />} label="Contact" href="/admin-dashboard/contact-info" active={pathname === "/admin/contact"} />
-          <NavItem icon={<FiTruck />} label="Shop" href="/admin-dashboard/shop" active={pathname === "/admin/shop"} />
+          <NavItem icon={<FiHome />} label="Overview" href="/admin-dashboard" active={pathname === "/admin-dashboard"} />
+          <NavItem icon={<FiPackage />} label="Inventory" href="/admin-dashboard/inventory" active={pathname === "/admin-dashboard/inventory"} />
+          <NavItem icon={<FiShoppingCart />} label="Contact" href="/admin-dashboard/contact-info" active={pathname === "/admin-dashboard/contact-info"} />
+          <NavItem icon={<FiTruck />} label="Shop" href="/admin-dashboard/shop" active={pathname === "/admin-dashboard/shop"} />
           <NavItem icon={<FiSettings />} label="Settings" href="/admin/settings" active={pathname === "/admin/settings"} />
         </nav>
 
