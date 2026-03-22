@@ -23,13 +23,13 @@ const AdminDashboard: React.FC = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen py-20">
       
-      {/* Header */}
+     
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800">🌿 Plant-Ventory Dashboard</h1>
         <p className="text-gray-500">Manage your plant inventory efficiently</p>
       </div>
 
-      {/* Stats */}
+   
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <StatCard
           title="Total Plants"
@@ -53,11 +53,11 @@ const AdminDashboard: React.FC = () => {
         />
       </div>
 
-      {/* Main Grid */}
+    
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* Recent Activity */}
-        <div className="lg:col-span-2 bg-white rounded-2xl shadow-md p-5">
+    
+          <div className="lg:col-span-2 bg-white rounded-2xl shadow-md p-5">
           <h2 className="text-xl font-semibold mb-4 text-gray-800">
             Recent Activity
           </h2>
@@ -78,7 +78,7 @@ const AdminDashboard: React.FC = () => {
           </ul>
         </div>
 
-        {/* Quick Actions */}
+   
         <div className="bg-white rounded-2xl shadow-md p-5">
           <h2 className="text-xl font-semibold mb-4 text-gray-800">
             Quick Actions
