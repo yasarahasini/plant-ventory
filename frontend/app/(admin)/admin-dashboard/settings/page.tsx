@@ -1,5 +1,6 @@
 import React from "react";
 import { Leaf, Package, AlertTriangle, Users } from "lucide-react";
+import Link from "next/link";
 
 type StatCardProps = {
   title: string;
@@ -63,17 +64,17 @@ const AdminDashboard: React.FC = () => {
           </h2>
 
           <ul className="space-y-4">
-            <li className="flex justify-between border-b pb-2">
+            <li className="flex justify-between text-black border-b pb-2">
               <span>Added new plant: Monstera</span>
-              <span className="text-gray-400 text-sm">2h ago</span>
+              <span className="text-gray-900 text-sm">2h ago</span>
             </li>
-            <li className="flex justify-between border-b pb-2">
+            <li className="flex justify-between text-black border-b pb-2">
               <span>Updated stock: Snake Plant</span>
-              <span className="text-gray-400 text-sm">5h ago</span>
+              <span className="text-gray-900 text-sm">5h ago</span>
             </li>
-            <li className="flex justify-between border-b pb-2">
+            <li className="flex justify-between text-black border-b pb-2">
               <span>Low stock alert: Aloe Vera</span>
-              <span className="text-gray-400 text-sm">1 day ago</span>
+              <span className="text-gray-900 text-sm">1 day ago</span>
             </li>
           </ul>
         </div>
@@ -86,13 +87,13 @@ const AdminDashboard: React.FC = () => {
 
           <div className="flex flex-col gap-4">
             <button className="bg-green-600 text-white py-2 rounded-xl hover:bg-green-700 transition">
-              + Add Plant
+             <Link href="/admin-dashboard/shop"> + Add Plant</Link>
             </button>
             <button className="bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition">
-              Manage Inventory
+             <Link href="/admin-dashboard"> Manage Inventory</Link>
             </button>
             <button className="bg-yellow-500 text-white py-2 rounded-xl hover:bg-yellow-600 transition">
-              View Reports
+             <Link href="/admin-dashboard"> View Reports</Link>
             </button>
           </div>
         </div>
