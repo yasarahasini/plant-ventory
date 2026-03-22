@@ -21,7 +21,7 @@ export default function ContactListPage() {
   }, []);
 
   return (
-    <div className="p-20" text-black>
+    <div className="p-20 bg-green-50" text-black>
 
       <h1 className="text-3xl font-bold mb-8">
         Contact Messages
